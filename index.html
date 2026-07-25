@@ -3,509 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apex Solar Systems | Tamil Nadu's Trusted Solar Partner</title>
+  <title>Apex Solar Systems | Reduce your EB Bill by 100% using Solar Energy!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <style>
-    :root {
-      --bg: #DDF2D1;
-      --green: #2D6A4F;
-      --black: #000000;
-      --white: #FFFFFF;
-      --nav-bg: rgba(221,242,209,0.97);
-      --card-border: #2D6A4F;
-      --gray: #444444;
-      --light-green-grad: linear-gradient(135deg, #DDF2D1 0%, #b7e4c7 100%);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--black);
-      font-family: 'Open Sans', sans-serif;
-      min-height: 100vh;
-    }
-    h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; color: var(--black); }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    /* ── NAVBAR ── */
-    #navbar {
-      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-      background: var(--nav-bg); height: 75px;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      transition: background 0.3s;
-    }
-    #navbar.scrolled { background: rgba(221,242,209,0.99); box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
-    .nav-brand { display: flex; align-items: center; gap: 12px; cursor: pointer; }
-    .nav-brand img { height: 55px; width: auto; }
-    .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-    .brand-text .apex { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1.1rem; color:var(--green); }
-    .brand-text .systems { font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.72rem; color:var(--black); letter-spacing:2px; }
-    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
-    .nav-links li a, .nav-links li button {
-      font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.82rem;
-      color: var(--black); background: none; border: none; cursor: pointer;
-      padding: 8px 13px; border-radius: 6px; transition: color 0.2s, background 0.2s;
-      letter-spacing: 0.3px;
-    }
-    .nav-links li a:hover, .nav-links li button:hover { color: var(--green); background: rgba(45,106,79,0.08); }
-    .nav-links li a.active { color: var(--green); border-bottom: 2px solid var(--green); }
-    .nav-links .granite-btn {
-      background: var(--white) !important; border: 2px solid var(--green) !important;
-      color: var(--green) !important; border-radius: 8px; padding: 7px 14px;
-    }
-    .nav-links .granite-btn:hover { background: var(--green) !important; color: var(--white) !important; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
-    .hamburger span { width: 26px; height: 3px; background: var(--black); border-radius: 2px; transition: 0.3s; }
-    .mobile-menu {
-      display: none; flex-direction: column; background: var(--nav-bg);
-      padding: 16px 24px; border-top: 1px solid rgba(45,106,79,0.15);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a, .mobile-menu button {
-      font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.9rem;
-      color: var(--black); background: none; border: none; cursor: pointer;
-      padding: 11px 0; border-bottom: 1px solid rgba(45,106,79,0.1); text-align: left;
-    }
-    .mobile-menu a.active { color: var(--green); }
-    .mobile-menu .mob-granite { color: var(--green) !important; }
-
-    /* ── PAGE WRAPPER ── */
-    .page { display: none; padding-top: 75px; }
-    .page.active { display: block; }
-
-    /* ── BUTTONS ── */
-    .btn-primary {
-      background: var(--white); color: var(--green);
-      border: 2px solid var(--green); border-radius: 8px;
-      padding: 13px 28px; font-family:'Montserrat',sans-serif;
-      font-weight:700; font-size:0.9rem; cursor: pointer;
-      transition: background 0.2s, color 0.2s; display: inline-block;
-    }
-    .btn-primary:hover { background: var(--green); color: var(--white); }
-    .btn-green {
-      background: var(--green); color: var(--white); border: 2px solid var(--green);
-      border-radius: 8px; padding: 13px 28px; font-family:'Montserrat',sans-serif;
-      font-weight:700; font-size:0.9rem; cursor: pointer;
-      transition: background 0.2s, color 0.2s; display: inline-block;
-    }
-    .btn-green:hover { background: var(--white); color: var(--green); }
-
-    /* ── SECTION TITLES ── */
-    .section-title { font-size:2rem; font-weight:800; color:var(--black); margin-bottom:10px; }
-    .section-title span { color: var(--green); }
-    .section-sub { color: var(--gray); font-size:1rem; margin-bottom:36px; max-width:600px; }
-    .section-center { text-align:center; }
-    .section-center .section-sub { margin-left:auto; margin-right:auto; }
-
-    /* ── HERO SLIDESHOW ── */
-    #hero {
-      position: relative; width:100%; height:100vh; min-height:560px;
-      overflow: hidden; display:flex; align-items:center;
-    }
-    .slideshow-bg { position:absolute; inset:0; z-index:0; }
-    .slide {
-      position:absolute; inset:0; background-size:cover; background-position:center;
-      opacity:0; transition: opacity 0.9s ease-in-out;
-    }
-    .slide.active { opacity:1; }
-    .hero-overlay {
-      position:absolute; inset:0; background:rgba(221,242,209,0.5); z-index:1;
-    }
-    .hero-content {
-      position:relative; z-index:2; max-width:680px;
-      padding: 0 60px; color: var(--black);
-    }
-    .hero-badge {
-      display:inline-block; background:var(--white); color:var(--green);
-      border:2px solid var(--green); border-radius:20px;
-      padding:6px 16px; font-family:'Montserrat',sans-serif;
-      font-weight:700; font-size:0.78rem; margin-bottom:20px; letter-spacing:0.5px;
-    }
-    .hero-content h1 {
-      font-size:3rem; font-weight:800; line-height:1.15; margin-bottom:18px; color:var(--black);
-    }
-    .hero-content h1 span { color:var(--green); }
-    .hero-content p { font-size:1.05rem; color:var(--gray); margin-bottom:20px; line-height:1.7; }
-    .hero-catchlines { margin-bottom:32px; }
-    .hero-catchlines .line {
-      display:flex; align-items:center; gap:10px;
-      font-family:'Montserrat',sans-serif; font-weight:700;
-      font-size:1.02rem; color:var(--black); margin-bottom:10px;
-    }
-    .hero-catchlines .line i { color:var(--green); font-size:1.1rem; }
-    .hero-buttons { display:flex; gap:16px; flex-wrap:wrap; }
-
-    /* ── EB BILL GLOW ── */
-    .eb-glow {
-      font-size: 1.22rem;
-      font-weight: 800;
-      color: #fff;
-      background: linear-gradient(90deg, #1b7c3e 0%, #52c97a 50%, #1b7c3e 100%);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: ebShine 2.2s linear infinite, ebPulse 1.8s ease-in-out infinite;
-      display: inline-block;
-      filter: drop-shadow(0 0 6px rgba(82,201,122,0.7));
-      letter-spacing: 0.5px;
-    }
-    @keyframes ebShine {
-      0%   { background-position: 0% center; }
-      100% { background-position: 200% center; }
-    }
-    @keyframes ebPulse {
-      0%, 100% { filter: drop-shadow(0 0 4px rgba(82,201,122,0.55)); }
-      50%       { filter: drop-shadow(0 0 14px rgba(82,201,122,1)) drop-shadow(0 0 28px rgba(45,106,79,0.6)); }
-    }
-    .line-eb {
-      font-size: 1.18rem !important;
-    }
-
-    /* Slideshow controls */
-    .slide-dots { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:3; display:flex; gap:8px; }
-    .dot {
-      width:11px; height:11px; border-radius:50%;
-      background:rgba(45,106,79,0.35); border:2px solid var(--green);
-      cursor:pointer; transition:background 0.3s;
-    }
-    .dot.active { background:var(--green); }
-    .slide-arrow {
-      position:absolute; top:50%; transform:translateY(-50%);
-      z-index:3; background:rgba(255,255,255,0.7); border:2px solid var(--green);
-      color:var(--green); width:44px; height:44px; border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      cursor:pointer; font-size:1.1rem; transition:background 0.2s;
-    }
-    .slide-arrow:hover { background:var(--green); color:var(--white); }
-    .slide-arrow.prev { left:20px; }
-    .slide-arrow.next { right:20px; }
-
-    /* ── STATS BAR ── */
-    .stats-bar {
-      background:var(--white); padding:36px 60px;
-      display:flex; justify-content:space-around; align-items:center;
-      flex-wrap:wrap; gap:24px; border-top:3px solid var(--green);
-    }
-    .stat-item { text-align:center; }
-    .stat-item .num {
-      font-family:'Montserrat',sans-serif; font-weight:800;
-      font-size:2.2rem; color:var(--green);
-    }
-    .stat-item .lbl { font-size:0.88rem; color:var(--gray); font-weight:600; margin-top:4px; }
-
-    /* ── SERVICES CARDS ── */
-    .services-section { padding:80px 60px; background:var(--bg); }
-    .cards-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:28px; margin-top:16px; }
-    .service-card {
-      background:var(--white); border-radius:14px; overflow:hidden;
-      border-top:4px solid var(--green);
-      box-shadow:0 4px 18px rgba(45,106,79,0.08);
-      transition:transform 0.25s, box-shadow 0.25s;
-    }
-    .service-card:hover { transform:translateY(-6px); box-shadow:0 10px 32px rgba(45,106,79,0.16); }
-    .service-card img { width:100%; height:210px; object-fit:cover; }
-    .service-card-body { padding:24px; }
-    .service-card-body .icon-wrap {
-      width:46px; height:46px; background:rgba(45,106,79,0.1);
-      border-radius:50%; display:flex; align-items:center; justify-content:center;
-      margin-bottom:14px;
-    }
-    .service-card-body .icon-wrap i { color:var(--green); font-size:1.2rem; }
-    .service-card-body h3 { font-size:1.15rem; margin-bottom:8px; color:var(--black); }
-    .service-card-body p { font-size:0.9rem; color:var(--gray); line-height:1.6; margin-bottom:14px; }
-    .benefit-list { list-style:none; padding:0; }
-    .benefit-list li { font-size:0.86rem; color:var(--gray); margin-bottom:6px; display:flex; gap:8px; align-items:flex-start; }
-    .benefit-list li i { color:var(--green); margin-top:2px; flex-shrink:0; }
-    /* ── WHY CHOOSE ── */
-    .why-section { padding:80px 60px; background:var(--white); }
-    .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; margin-top:16px; }
-    .why-card {
-      background:var(--white); border-radius:14px; padding:32px 24px;
-      border-top:4px solid var(--green);
-      box-shadow:0 4px 18px rgba(45,106,79,0.08); text-align:center;
-      transition:transform 0.25s;
-    }
-    .why-card:hover { transform:translateY(-5px); }
-    .why-icon {
-      width:60px; height:60px; background:rgba(45,106,79,0.1); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      margin:0 auto 18px; font-size:1.5rem; color:var(--green);
-    }
-    .why-card h3 { font-size:1rem; margin-bottom:8px; }
-    .why-card p { font-size:0.88rem; color:var(--gray); line-height:1.6; }
-
-    /* ── LOCATIONS ── */
-    .locations-section {
-      padding:70px 60px; background: var(--light-green-grad); text-align:center;
-    }
-    .location-chips { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:28px; }
-    .chip {
-      background:var(--white); border:2px solid var(--green); color:var(--green);
-      border-radius:24px; padding:8px 22px; font-family:'Montserrat',sans-serif;
-      font-weight:700; font-size:0.88rem; display:flex; align-items:center; gap:7px;
-    }
-    .chip i { font-size:0.85rem; }
-
-    /* ── PHOTO STRIP ── */
-    .photo-strip { padding:70px 60px; background:var(--white); }
-    .photo-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-      gap:14px; margin-bottom:32px;
-    }
-    .photo-grid img {
-      width:100%; height:180px; object-fit:cover; border-radius:10px;
-      border:2px solid rgba(45,106,79,0.15);
-      transition:transform 0.25s, box-shadow 0.25s;
-    }
-    .photo-grid img:hover { transform:scale(1.04); box-shadow:0 8px 24px rgba(45,106,79,0.18); }
-
-    /* ── PAGE BANNER ── */
-    .page-banner {
-      background:var(--white); border-bottom:3px solid var(--green);
-      padding:52px 60px 40px; text-align:center;
-    }
-    .page-banner h1 { font-size:2.4rem; font-weight:800; }
-    .page-banner h1 span { color:var(--green); }
-    .page-banner p { color:var(--gray); margin-top:10px; font-size:1rem; }
-
-    /* ── ABOUT PAGE ── */
-    .about-grid {
-      display:grid; grid-template-columns:1fr 1fr; gap:60px;
-      padding:70px 60px; align-items:start;
-    }
-    .about-img-wrap { position:relative; }
-    .about-img-wrap .main-img { border-radius:14px; width:100%; height:380px; object-fit:cover; border:3px solid var(--green); }
-    .about-img-wrap .accent-img {
-      position:absolute; bottom:-22px; right:-22px;
-      width:160px; height:130px; object-fit:cover;
-      border-radius:10px; border:3px solid var(--white);
-      box-shadow:0 4px 14px rgba(0,0,0,0.15);
-    }
-    .about-text h2 { font-size:1.9rem; margin-bottom:18px; }
-    .about-text p { color:var(--gray); line-height:1.8; margin-bottom:16px; font-size:0.97rem; }
-    .feature-chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
-    .feature-chip {
-      background:var(--white); border-left:4px solid var(--green);
-      border-radius:0 8px 8px 0; padding:8px 16px;
-      font-family:'Montserrat',sans-serif; font-weight:600;
-      font-size:0.82rem; color:var(--black);
-      box-shadow:0 2px 8px rgba(45,106,79,0.08);
-    }
-    .mvp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; padding:0 60px 70px; }
-    .mvp-card {
-      background:var(--white); border-radius:14px; padding:28px 22px;
-      border-top:4px solid var(--green); box-shadow:0 4px 16px rgba(45,106,79,0.08);
-    }
-    .mvp-card h3 { font-size:1rem; margin-bottom:8px; color:var(--green); }
-    .mvp-card p { font-size:0.88rem; color:var(--gray); line-height:1.6; }
-    /* ── SERVICES PAGE ── */
-    .service-section-row {
-      display:grid; grid-template-columns:1fr 1fr; gap:60px;
-      padding:60px 60px 0; align-items:center;
-    }
-    .service-section-row.reverse { direction:rtl; }
-    .service-section-row.reverse > * { direction:ltr; }
-    .service-section-row img { width:100%; height:340px; object-fit:cover; border-radius:14px; border:3px solid var(--green); }
-    .service-section-text h2 { font-size:1.7rem; margin-bottom:14px; }
-    .service-section-text p { color:var(--gray); line-height:1.8; margin-bottom:18px; font-size:0.95rem; }
-    .apex-diff { padding:60px; background:var(--bg); }
-    .diff-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; margin-top:24px; }
-    .diff-card {
-      background:var(--white); border-radius:14px; padding:28px 22px;
-      border-top:4px solid var(--green); box-shadow:0 4px 16px rgba(45,106,79,0.08);
-      text-align:center;
-    }
-    .diff-card i { font-size:2rem; color:var(--green); margin-bottom:14px; }
-    .diff-card h3 { font-size:1rem; margin-bottom:8px; }
-    .diff-card p { font-size:0.88rem; color:var(--gray); line-height:1.6; }
-
-    /* ── PROJECTS PAGE ── */
-    .projects-grid {
-      display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-      gap:18px; padding:50px 60px;
-    }
-    .proj-card { position:relative; border-radius:12px; overflow:hidden; cursor:pointer; border:2px solid rgba(45,106,79,0.2); }
-    .proj-card img { width:100%; height:220px; object-fit:cover; transition:transform 0.35s; display:block; }
-    .proj-card:hover img { transform:scale(1.07); }
-    .proj-overlay {
-      position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 60%);
-      display:flex; flex-direction:column; justify-content:flex-end; padding:16px;
-      opacity:0; transition:opacity 0.3s;
-    }
-    .proj-card:hover .proj-overlay { opacity:1; }
-    .proj-overlay h4 { color:#fff; font-size:0.95rem; margin-bottom:6px; }
-    .loc-badge {
-      display:inline-flex; align-items:center; gap:5px;
-      background:var(--green); color:#fff; border-radius:12px;
-      padding:3px 10px; font-size:0.75rem; font-family:'Montserrat',sans-serif; font-weight:600;
-    }
-    .proj-locations { padding:0 60px 60px; }
-
-    /* ── CONTACT PAGE ── */
-    .contact-grid {
-      display:grid; grid-template-columns:1fr 1.4fr; gap:40px;
-      padding:60px 60px;
-    }
-    .contact-info-card {
-      background:var(--white); border-radius:14px; padding:36px 30px;
-      border-top:4px solid var(--green); box-shadow:0 4px 18px rgba(45,106,79,0.08);
-    }
-    .contact-info-card h3 { font-size:1.3rem; margin-bottom:22px; }
-    .info-row { display:flex; gap:14px; margin-bottom:18px; align-items:flex-start; }
-    .info-row .icon-box {
-      width:40px; height:40px; background:rgba(45,106,79,0.1);
-      border-radius:8px; display:flex; align-items:center; justify-content:center;
-      flex-shrink:0;
-    }
-    .info-row .icon-box i { color:var(--green); }
-    .info-row .info-text .lbl { font-weight:700; font-size:0.82rem; color:var(--green); margin-bottom:2px; }
-    .info-row .info-text .val { font-size:0.9rem; color:var(--gray); }
-    .social-icons { display:flex; gap:10px; margin-top:24px; flex-wrap:wrap; }
-    .soc-btn {
-      position:relative; width:42px; height:42px;
-      background:var(--white); border:2px solid var(--green);
-      border-radius:8px; display:flex; align-items:center; justify-content:center;
-      color:var(--green); font-size:1rem; cursor:pointer; transition:background 0.2s, color 0.2s;
-      text-decoration:none;
-    }
-    .soc-btn:hover { background:var(--green); color:var(--white); }
-    .soc-tooltip {
-      position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%);
-      background:var(--black); color:var(--white); border-radius:6px;
-      padding:6px 11px; font-size:0.75rem; white-space:nowrap;
-      pointer-events:none; opacity:0; transition:opacity 0.2s; z-index:99;
-    }
-    .soc-tooltip strong { display:block; }
-    .soc-btn:hover .soc-tooltip { opacity:1; }
-    /* ── CONTACT FORM ── */
-    .contact-form-card {
-      background:var(--white); border-radius:14px; padding:36px 30px;
-      border-top:4px solid var(--green); box-shadow:0 4px 18px rgba(45,106,79,0.08);
-    }
-    .contact-form-card h3 { font-size:1.3rem; margin-bottom:22px; }
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    .form-group { display:flex; flex-direction:column; margin-bottom:16px; }
-    .form-group label { font-weight:600; font-size:0.82rem; margin-bottom:5px; color:var(--black); }
-    .form-group input, .form-group select, .form-group textarea {
-      padding:11px 14px; border:2px solid rgba(45,106,79,0.25); border-radius:8px;
-      font-family:'Open Sans',sans-serif; font-size:0.9rem; color:var(--black);
-      background:var(--white); outline:none; transition:border-color 0.2s;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color:var(--green);
-    }
-    .form-group textarea { resize:vertical; min-height:100px; }
-    .map-wrap { margin-top:36px; border-radius:14px; overflow:hidden; border:2px solid rgba(45,106,79,0.2); }
-    .map-wrap iframe { width:100%; height:300px; border:none; display:block; }
-
-    /* ── FOOTER ── */
-    footer {
-      background:var(--white); border-top:3px solid var(--green);
-      padding:60px 60px 30px; margin-top:0;
-    }
-    .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1.2fr; gap:50px; }
-    .footer-col h4 {
-      font-family:'Montserrat',sans-serif; font-weight:700;
-      font-size:1rem; color:var(--black); margin-bottom:18px;
-      padding-bottom:8px; border-bottom:2px solid rgba(45,106,79,0.2);
-    }
-    .footer-col p { font-size:0.88rem; color:var(--gray); line-height:1.7; margin-bottom:18px; }
-    .footer-col ul { list-style:none; }
-    .footer-col ul li { margin-bottom:9px; }
-    .footer-col ul li a {
-      font-size:0.88rem; color:var(--gray); transition:color 0.2s;
-      display:flex; align-items:center; gap:6px;
-    }
-    .footer-col ul li a:hover { color:var(--green); }
-    .footer-contact-row { display:flex; gap:12px; margin-bottom:13px; align-items:flex-start; }
-    .footer-icon-box {
-      width:34px; height:34px; background:rgba(45,106,79,0.1);
-      border-radius:6px; display:flex; align-items:center; justify-content:center;
-      flex-shrink:0;
-    }
-    .footer-icon-box i { color:var(--green); font-size:0.88rem; }
-    .footer-contact-row .txt { font-size:0.85rem; color:var(--gray); line-height:1.5; }
-    .footer-bottom {
-      border-top:1px solid rgba(45,106,79,0.15); margin-top:44px;
-      padding-top:20px; text-align:center;
-      font-size:0.82rem; color:var(--gray);
-    }
-    .footer-bottom span { color:var(--green); font-weight:700; }
-
-    /* ── FLOATING WA BUTTON ── */
-    .wa-float {
-      position:fixed; bottom:28px; right:28px; z-index:9999;
-      width:58px; height:58px; background:#25D366; border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-      color:#fff; font-size:1.6rem;
-      box-shadow:0 4px 18px rgba(37,211,102,0.45);
-      animation: waPulse 2s infinite;
-      text-decoration:none;
-    }
-    .wa-float:hover { background:#1da851; transform:scale(1.08); }
-    @keyframes waPulse {
-      0%,100% { box-shadow:0 0 0 0 rgba(37,211,102,0.45); }
-      50% { box-shadow:0 0 0 14px rgba(37,211,102,0); }
-    }
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .nav-links { display:none; }
-      .hamburger { display:flex; }
-      .hero-content { padding:0 30px; }
-      .hero-content h1 { font-size:2.1rem; }
-      .about-grid { grid-template-columns:1fr; padding:40px 28px; }
-      .about-img-wrap .accent-img { bottom:-14px; right:-10px; width:110px; height:85px; }
-      .service-section-row { grid-template-columns:1fr; padding:40px 28px 0; }
-      .service-section-row.reverse { direction:ltr; }
-      .contact-grid { grid-template-columns:1fr; padding:40px 28px; }
-      .footer-grid { grid-template-columns:1fr; gap:30px; }
-      .stats-bar { padding:28px 20px; }
-      .services-section, .why-section, .locations-section, .photo-strip { padding:50px 28px; }
-      .page-banner { padding:40px 28px 30px; }
-      .page-banner h1 { font-size:1.8rem; }
-      .projects-grid { padding:30px 20px; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); }
-      .proj-locations { padding:0 20px 40px; }
-      .mvp-grid { padding:0 28px 50px; }
-      .apex-diff { padding:40px 28px; }
-      footer { padding:40px 28px 24px; }
-    }
-    @media (max-width: 540px) {
-      .hero-content h1 { font-size:1.6rem; }
-      .form-row { grid-template-columns:1fr; }
-      .cards-grid { grid-template-columns:1fr; }
-      .why-grid { grid-template-columns:1fr; }
-      .stat-item .num { font-size:1.6rem; }
-      #navbar { padding:0 18px; }
-      .hero-buttons { flex-direction:column; gap:10px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+<!-- NAVBAR -->
 <nav id="navbar">
-  <div class="nav-brand" onclick="showPage('home')">
+  <a href="index.html" class="nav-brand">
     <img src="LOGO.PNG" alt="Apex Solar Logo" />
     <div class="brand-text">
       <span class="apex">APEX SOLAR</span>
       <span class="systems">SYSTEMS</span>
     </div>
-  </div>
+  </a>
   <ul class="nav-links">
-    <li><a href="#" class="nav-link active" data-page="home" onclick="showPage('home');return false;">Home</a></li>
-    <li><a href="#" class="nav-link" data-page="about" onclick="showPage('about');return false;">About Us</a></li>
-    <li><a href="#" class="nav-link" data-page="services" onclick="showPage('services');return false;">Our Services</a></li>
-    <li><a href="#" class="nav-link" data-page="projects" onclick="showPage('projects');return false;">Projects</a></li>
-    <li><a href="#" class="nav-link" data-page="contact" onclick="showPage('contact');return false;">Contact</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Our Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
     <li><a href="https://apexrocks.in/" target="_blank" rel="noopener" class="granite-btn">&#9654; Granite Works</a></li>
   </ul>
   <div class="hamburger" onclick="toggleNav()" aria-label="Menu" role="button" tabindex="0">
@@ -513,590 +34,182 @@
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#" class="mob-link active" data-page="home" onclick="showPage('home');toggleNav();return false;">Home</a>
-  <a href="#" class="mob-link" data-page="about" onclick="showPage('about');toggleNav();return false;">About Us</a>
-  <a href="#" class="mob-link" data-page="services" onclick="showPage('services');toggleNav();return false;">Our Services</a>
-  <a href="#" class="mob-link" data-page="projects" onclick="showPage('projects');toggleNav();return false;">Projects</a>
-  <a href="#" class="mob-link" data-page="contact" onclick="showPage('contact');toggleNav();return false;">Contact</a>
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Our Services</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
   <a href="https://apexrocks.in/" target="_blank" rel="noopener" class="mob-granite">&#9654; Granite Works</a>
 </div>
 
-<!-- ═══════════════════════════ HOME PAGE ═══════════════════════════ -->
-<div id="page-home" class="page active">
-
-  <!-- HERO -->
-  <section id="hero">
-    <div class="slideshow-bg" id="slideshowBg">
-      <div class="slide active" style="background-image:url('slide1.jpg')"></div>
-      <div class="slide" style="background-image:url('slide2.jpg')"></div>
-      <div class="slide" style="background-image:url('slide3.jpg')"></div>
-      <div class="slide" style="background-image:url('slide4.jpg')"></div>
-      <div class="slide" style="background-image:url('slide5.jpg')"></div>
-      <div class="slide" style="background-image:url('slide6.jpg')"></div>
-      <div class="slide" style="background-image:url('raze-solar-Q8V1EEvnJgk-unsplash.jpg')"></div>
-      <div class="slide" style="background-image:url('american-public-power-association-XGAZzyLzn18-unsplash.jpg')"></div>
-      <div class="slide" style="background-image:url('pexels-ian-panelo-7424248.jpg')"></div>
-      <div class="slide" style="background-image:url('pexels-pixabay-433308.jpg')"></div>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="hero-badge"><i class="fa-solid fa-sun"></i> &nbsp;Tamil Nadu's Trusted Solar Partner</span>
-      <h1>Power Your Future with <span>Solar</span> Energy</h1>
-      <p>Apex Solar Systems delivers high-efficiency PV modules and complete EPC solutions tailored for homes, institutions, and industries across Tamil Nadu.</p>
-      <div class="hero-catchlines">
-        <div class="line line-eb"><i class="fa-solid fa-circle-check"></i> Reduce your <span class="eb-glow">EB bill by 100%</span>!</div>
-        <div class="line"><i class="fa-solid fa-circle-check"></i> We are just an Enquiry away!</div>
-        <div class="line"><i class="fa-solid fa-circle-check"></i> Government subsidy available.</div>
-        <div class="line"><i class="fa-solid fa-circle-check"></i> Loan Assistance Available — Easy EMI Facility.</div>
-        <div class="line"><i class="fa-solid fa-circle-check"></i> Professional On-Grid and Off-Grid Solar Solutions.</div>
-      </div>
-      <div class="hero-buttons">
-        <button class="btn-primary" onclick="showPage('contact')"><i class="fa-solid fa-envelope"></i> Get Free Quote</button>
-        <button class="btn-primary" onclick="showPage('services')"><i class="fa-solid fa-solar-panel"></i> Our Services</button>
-      </div>
-    </div>
-    <div class="slide-arrow prev" onclick="changeSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></div>
-    <div class="slide-arrow next" onclick="changeSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></div>
-    <div class="slide-dots" id="slideDots"></div>
-  </section>
-
-  <!-- STATS BAR -->
-  <section class="stats-bar">
-    <div class="stat-item"><div class="num">500+</div><div class="lbl">Projects Completed</div></div>
-    <div class="stat-item"><div class="num">10+</div><div class="lbl">Years Experience</div></div>
-    <div class="stat-item"><div class="num">15+</div><div class="lbl">Locations Served</div></div>
-    <div class="stat-item"><div class="num">100%</div><div class="lbl">Tier 1 Components</div></div>
-  </section>
-
-  <!-- CORE SERVICES -->
-  <section class="services-section">
-    <div class="section-center">
-      <h2 class="section-title">Our Core <span>Solar Services</span></h2>
-      <p class="section-sub">End-to-end solar solutions — from design and supply to installation and after-sales support.</p>
-    </div>
-    <div class="cards-grid">
-      <div class="service-card">
-        <img src="solar_1.PNG" alt="Rooftop Solar Installation" />
-        <div class="service-card-body">
-          <div class="icon-wrap"><i class="fa-solid fa-house"></i></div>
-          <h3>Rooftop Solar</h3>
-          <p>Turn every rooftop into a power plant. Ideal for homes, apartments, shops, and institutions.</p>
-          <ul class="benefit-list">
-            <li><i class="fa-solid fa-check"></i> Up to 100% EB bill reduction</li>
-            <li><i class="fa-solid fa-check"></i> Net metering support</li>
-            <li><i class="fa-solid fa-check"></i> Government subsidy eligible</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <img src="5.PNG" alt="Ground Mounted Solar" />
-        <div class="service-card-body">
-          <div class="icon-wrap"><i class="fa-solid fa-industry"></i></div>
-          <h3>Ground Mounted Solar</h3>
-          <p>Large-scale solar farms designed for maximum output for industries and agricultural land.</p>
-          <ul class="benefit-list">
-            <li><i class="fa-solid fa-check"></i> High capacity MW installations</li>
-            <li><i class="fa-solid fa-check"></i> Optimised tilt &amp; orientation</li>
-            <li><i class="fa-solid fa-check"></i> Industrial-grade mounting</li>
-          </ul>
-        </div>
-      </div>
-      <div class="service-card">
-        <img src="solar_2.PNG" alt="EPC Solutions" />
-        <div class="service-card-body">
-          <div class="icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-          <h3>EPC Solutions</h3>
-          <p>Full Engineering, Procurement, and Construction services — one partner for the entire project lifecycle.</p>
-          <ul class="benefit-list">
-            <li><i class="fa-solid fa-check"></i> Turnkey project delivery</li>
-            <li><i class="fa-solid fa-check"></i> Certified engineers on-site</li>
-            <li><i class="fa-solid fa-check"></i> Post-installation AMC</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE APEX -->
-  <section class="why-section">
-    <div class="section-center">
-      <h2 class="section-title">Why Choose <span>Apex?</span></h2>
-      <p class="section-sub">We deliver quality, reliability, and value that sets us apart in Tamil Nadu's solar industry.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon"><i class="fa-solid fa-award"></i></div>
-        <h3>Tier 1 &amp; 2 Components</h3>
-        <p>We use only globally certified, bankable solar modules and inverters for maximum performance and longevity.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
-        <h3>Affordable for All</h3>
-        <p>Flexible financing options, government subsidies, and transparent pricing make solar accessible to every budget.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><i class="fa-solid fa-helmet-safety"></i></div>
-        <h3>Expert Installation</h3>
-        <p>Our trained, certified technicians ensure safe, precise, and code-compliant installations every time.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
-        <h3>End-to-End Support</h3>
-        <p>From site survey and design to commissioning and annual maintenance — we're with you every step of the way.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCATIONS -->
-  <section class="locations-section">
-    <h2 class="section-title">Installed Across <span>Tamil Nadu</span></h2>
-    <p style="color:var(--gray);margin-top:10px;">Powering communities in cities and towns across the state.</p>
-    <div class="location-chips">
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Chennai</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Trichy</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Madurai</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Coimbatore</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Dindigul</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Namakkal</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Salem</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Erode</span>
-      <span class="chip"><i class="fa-solid fa-plus"></i> &amp; Many More</span>
-    </div>
-  </section>
-
-  <!-- PHOTO STRIP -->
-  <section class="photo-strip">
-    <div class="section-center" style="margin-bottom:30px;">
-      <h2 class="section-title">Our <span>Work Gallery</span></h2>
-      <p class="section-sub">A glimpse of solar installations delivered across Tamil Nadu.</p>
-    </div>
-    <div class="photo-grid">
-      <img src="1.PNG" alt="Solar Project 1" />
-      <img src="2.PNG" alt="Solar Project 2" />
-      <img src="3.PNG" alt="Solar Project 3" />
-      <img src="4.PNG" alt="Solar Project 4" />
-      <img src="WhatsApp Image 2026-07-23 at 2.21.26 PM.jpeg" alt="Solar Installation" />
-      <img src="WhatsApp Image 2026-07-23 at 2.21.27 PM.jpeg" alt="Solar Installation 2" />
-      <img src="WhatsApp Image 2026-07-23 at 2.21.28 PM.jpeg" alt="Solar Installation 3" />
-      <img src="pexels-pixabay-433308.jpg" alt="Solar Panels" />
-    </div>
-    <div style="text-align:center;">
-      <button class="btn-primary" onclick="showPage('projects')"><i class="fa-solid fa-images"></i> View All Projects</button>
-    </div>
-  </section>
-
-</div><!-- end #page-home -->
-
-<!-- ═══════════════════════════ ABOUT PAGE ═══════════════════════════ -->
-<div id="page-about" class="page">
-
-  <div class="page-banner">
-    <h1>About <span>Apex Solar Systems</span></h1>
-    <p>A pioneering force in Tamil Nadu's renewable energy landscape since over a decade.</p>
+<!-- HERO -->
+<section id="hero">
+  <div class="slideshow-bg" id="slideshowBg">
+    <div class="slide active" style="background-image:url('slide1.jpg')"></div>
+    <div class="slide" style="background-image:url('slide2.jpg')"></div>
+    <div class="slide" style="background-image:url('slide3.jpg')"></div>
+    <div class="slide" style="background-image:url('slide4.jpg')"></div>
+    <div class="slide" style="background-image:url('slide5.jpg')"></div>
+    <div class="slide" style="background-image:url('slide6.jpg')"></div>
+    <div class="slide" style="background-image:url('raze-solar-Q8V1EEvnJgk-unsplash.jpg')"></div>
+    <div class="slide" style="background-image:url('american-public-power-association-XGAZzyLzn18-unsplash.jpg')"></div>
+    <div class="slide" style="background-image:url('pexels-ian-panelo-7424248.jpg')"></div>
+    <div class="slide" style="background-image:url('pexels-pixabay-433308.jpg')"></div>
   </div>
-
-  <div class="about-grid">
-    <div class="about-img-wrap">
-      <img src="solar_3.PNG" alt="Apex Solar Team" class="main-img" />
-      <img src="3.PNG" alt="Solar Installation Accent" class="accent-img" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-badge"><i class="fa-solid fa-sun"></i> &nbsp;Reduce your EB Bill by 100% using Solar Energy!</span>
+    <h1>Power Your Future with <span>Solar</span> Energy</h1>
+    <p>Apex Solar Systems delivers high-efficiency PV modules and complete EPC solutions tailored for homes, institutions, and industries across Tamil Nadu.</p>
+    <div class="hero-catchlines">
+      <div class="line line-eb"><i class="fa-solid fa-circle-check"></i> Reduce your <span class="eb-glow">EB bill by 100%</span>!</div>
+      <div class="line"><i class="fa-solid fa-circle-check"></i> We are just an Enquiry away!</div>
+      <div class="line"><i class="fa-solid fa-circle-check"></i> Government subsidy available.</div>
+      <div class="line"><i class="fa-solid fa-circle-check"></i> Loan Assistance Available — Easy EMI Facility.</div>
+      <div class="line"><i class="fa-solid fa-circle-check"></i> Professional On-Grid and Off-Grid Solar Solutions.</div>
     </div>
-    <div class="about-text">
-      <h2>Who We <span style="color:var(--green);">Are</span></h2>
-      <p>Apex Solar Systems is a pioneering force in renewable energy, delivering cutting-edge photovoltaic (PV) module solutions and comprehensive EPC (Engineering, Procurement &amp; Construction) services across Tamil Nadu. We also trade as Apex Rocks &amp; Minerals, bringing the same commitment to quality and reliability across industries.</p>
-      <p>Founded on the belief that clean energy should be accessible to all, we serve homeowners, institutions, industries, and agricultural communities. Our team of certified engineers and technicians ensures every installation is safe, efficient, and built to last for 25+ years.</p>
-      <p>From a single rooftop panel to multi-megawatt ground-mounted arrays, Apex Solar Systems is your trusted partner for every stage of the solar journey — from initial consultation and design to final commissioning and ongoing maintenance.</p>
-      <div class="feature-chips">
-        <span class="feature-chip"><i class="fa-solid fa-star" style="color:var(--green);margin-right:6px;"></i>Tier 1 &amp; 2 Components Only</span>
-        <span class="feature-chip"><i class="fa-solid fa-building" style="color:var(--green);margin-right:6px;"></i>Institutions &amp; Residences</span>
-        <span class="feature-chip"><i class="fa-solid fa-gears" style="color:var(--green);margin-right:6px;"></i>Complete EPC Service</span>
-        <span class="feature-chip"><i class="fa-solid fa-tag" style="color:var(--green);margin-right:6px;"></i>Affordable Pricing</span>
-        <span class="feature-chip"><i class="fa-solid fa-map" style="color:var(--green);margin-right:6px;"></i>Pan-Tamil Nadu Coverage</span>
-        <span class="feature-chip"><i class="fa-solid fa-tools" style="color:var(--green);margin-right:6px;"></i>After-Sales Support</span>
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn-primary"><i class="fa-solid fa-envelope"></i> Get Free Quote</a>
+      <a href="services.html" class="btn-primary"><i class="fa-solid fa-solar-panel"></i> Our Services</a>
+    </div>
+  </div>
+  <div class="slide-arrow prev" onclick="changeSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></div>
+  <div class="slide-arrow next" onclick="changeSlide(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></div>
+  <div class="slide-dots" id="slideDots"></div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="stat-item"><div class="num">500+</div><div class="lbl">Projects Completed</div></div>
+  <div class="stat-item"><div class="num">10+</div><div class="lbl">Years Experience</div></div>
+  <div class="stat-item"><div class="num">15+</div><div class="lbl">Locations Served</div></div>
+  <div class="stat-item"><div class="num">100%</div><div class="lbl">Tier 1 Components</div></div>
+</section>
+
+<!-- CORE SERVICES -->
+<section class="services-section">
+  <div class="section-center">
+    <h2 class="section-title">Our Core <span>Solar Services</span></h2>
+    <p class="section-sub">End-to-end solar solutions — from design and supply to installation and after-sales support.</p>
+  </div>
+  <div class="cards-grid">
+    <div class="service-card">
+      <img src="solar_1.PNG" alt="Rooftop Solar Installation" />
+      <div class="service-card-body">
+        <div class="icon-wrap"><i class="fa-solid fa-house"></i></div>
+        <h3>Rooftop Solar</h3>
+        <p>Turn every rooftop into a power plant. Ideal for homes, apartments, shops, and institutions.</p>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-check"></i> Up to 100% EB bill reduction</li>
+          <li><i class="fa-solid fa-check"></i> Net metering support</li>
+          <li><i class="fa-solid fa-check"></i> Government subsidy eligible</li>
+        </ul>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="5.PNG" alt="Ground Mounted Solar" />
+      <div class="service-card-body">
+        <div class="icon-wrap"><i class="fa-solid fa-industry"></i></div>
+        <h3>Ground Mounted Solar</h3>
+        <p>Large-scale solar farms designed for maximum output for industries and agricultural land.</p>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-check"></i> High capacity MW installations</li>
+          <li><i class="fa-solid fa-check"></i> Optimised tilt &amp; orientation</li>
+          <li><i class="fa-solid fa-check"></i> Industrial-grade mounting</li>
+        </ul>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="solar_2.PNG" alt="EPC Solutions" />
+      <div class="service-card-body">
+        <div class="icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>EPC Solutions</h3>
+        <p>Full Engineering, Procurement, and Construction services — one partner for the entire project lifecycle.</p>
+        <ul class="benefit-list">
+          <li><i class="fa-solid fa-check"></i> Turnkey project delivery</li>
+          <li><i class="fa-solid fa-check"></i> Certified engineers on-site</li>
+          <li><i class="fa-solid fa-check"></i> Post-installation AMC</li>
+        </ul>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="mvp-grid">
-    <div class="mvp-card">
-      <h3><i class="fa-solid fa-crosshairs"></i> Our Mission</h3>
-      <p>To accelerate Tamil Nadu's transition to clean, affordable solar energy by providing high-quality PV systems and reliable EPC services that deliver measurable value to every customer.</p>
+<!-- WHY CHOOSE APEX -->
+<section class="why-section">
+  <div class="section-center">
+    <h2 class="section-title">Why Choose <span>Apex?</span></h2>
+    <p class="section-sub">We deliver quality, reliability, and value that sets us apart in Tamil Nadu's solar industry.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon"><i class="fa-solid fa-award"></i></div>
+      <h3>Tier 1 &amp; 2 Components</h3>
+      <p>We use only globally certified, bankable solar modules and inverters for maximum performance and longevity.</p>
     </div>
-    <div class="mvp-card">
-      <h3><i class="fa-solid fa-eye"></i> Our Vision</h3>
-      <p>To be the most trusted solar energy partner in South India — known for our integrity, technical excellence, and unwavering commitment to customer satisfaction.</p>
+    <div class="why-card">
+      <div class="why-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+      <h3>Affordable for All</h3>
+      <p>Flexible financing options, government subsidies, and transparent pricing make solar accessible to every budget.</p>
     </div>
-    <div class="mvp-card">
-      <h3><i class="fa-solid fa-handshake"></i> Our Promise</h3>
-      <p>Transparent pricing, quality components, expert installation, and lifetime support. We don't just install solar — we build long-term energy partnerships.</p>
+    <div class="why-card">
+      <div class="why-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+      <h3>Expert Installation</h3>
+      <p>Our trained, certified technicians ensure safe, precise, and code-compliant installations every time.</p>
     </div>
-    <div class="mvp-card">
-      <h3><i class="fa-solid fa-leaf"></i> Sustainability</h3>
-      <p>Every system we install reduces carbon emissions and dependence on fossil fuels. We're proud to contribute to a greener, more resilient Tamil Nadu for future generations.</p>
+    <div class="why-card">
+      <div class="why-icon"><i class="fa-solid fa-headset"></i></div>
+      <h3>End-to-End Support</h3>
+      <p>From site survey and design to commissioning and annual maintenance — we're with you every step of the way.</p>
     </div>
   </div>
+</section>
 
-</div><!-- end #page-about -->
-
-<!-- ═══════════════════════════ SERVICES PAGE ═══════════════════════════ -->
-<div id="page-services" class="page">
-
-  <div class="page-banner">
-    <h1>Our <span>Services</span></h1>
-    <p>Comprehensive solar solutions engineered for performance, reliability, and long-term savings.</p>
+<!-- LOCATIONS -->
+<section class="locations-section">
+  <h2 class="section-title">Installed Across <span>Tamil Nadu</span></h2>
+  <p style="color:var(--gray);margin-top:10px;">Powering communities in cities and towns across the state.</p>
+  <div class="location-chips">
+    <span class="chip"><i class="fa-solid fa-location-dot"></i> Chennai</span>
+    <span class="chip"><i class="fa-solid fa-location-dot"></i> Trichy</span>
+    <span class="chip"><i class="fa-solid fa-location-dot"></i> Madurai</span>
+    <span class="chip"><i class="fa-solid fa-location-dot"></i> Coimbatore</span>
+    <span class="chip"><i class="fa-solid fa-location-dot"></i> Dindigul</span>
+    <span class="chip"><i class="fa-solid fa-location-dot"></i> Namakkal</span>
+    <span class="chip"><i class="fa-solid fa-location-dot"></i> Salem</span>
+    <span class="chip"><i class="fa-solid fa-location-dot"></i> Erode</span>
+    <span class="chip"><i class="fa-solid fa-plus"></i> &amp; Many More</span>
   </div>
+</section>
 
-  <!-- Rooftop Solar -->
-  <div class="service-section-row" style="margin-bottom:60px;">
-    <img src="solar_1.PNG" alt="Rooftop Solar Installation" />
-    <div class="service-section-text">
-      <h2>Rooftop <span style="color:var(--green);">Solar</span></h2>
-      <p>Our rooftop solar systems transform idle roof space into powerful, revenue-generating energy plants. Whether it's your home, shop, school, or factory, we design and install systems that slash your electricity bills from day one.</p>
-      <ul class="benefit-list" style="margin-bottom:22px;">
-        <li><i class="fa-solid fa-check"></i> Systems from 1 kW to 500 kW and above</li>
-        <li><i class="fa-solid fa-check"></i> Grid-tied and off-grid options available</li>
-        <li><i class="fa-solid fa-check"></i> Eligible for government subsidies (MNRE)</li>
-        <li><i class="fa-solid fa-check"></i> Net metering &amp; TANGEDCO approvals handled</li>
-        <li><i class="fa-solid fa-check"></i> 25-year panel performance warranty</li>
-      </ul>
-      <button class="btn-primary" onclick="showPage('contact')"><i class="fa-solid fa-envelope"></i> Get a Quote</button>
-    </div>
+<!-- WORK GALLERY -->
+<section class="photo-strip">
+  <div class="section-center" style="margin-bottom:30px;">
+    <h2 class="section-title">Our <span>Work Gallery</span></h2>
+    <p class="section-sub">A glimpse of solar installations delivered across Tamil Nadu.</p>
   </div>
+  <div class="photo-grid">
+    <img src="1.PNG" alt="Solar Project 1" />
+    <img src="2.PNG" alt="Solar Project 2" />
+    <img src="3.PNG" alt="Solar Project 3" />
+    <img src="4.PNG" alt="Solar Project 4" />
+    <img src="solar_4.PNG" alt="Solar Project 5" />
 
-  <!-- Ground Mounted Solar -->
-  <div class="service-section-row reverse" style="margin-bottom:60px;">
-    <img src="5.PNG" alt="Ground Mounted Solar Farm" />
-    <div class="service-section-text">
-      <h2>Ground Mounted <span style="color:var(--green);">Solar</span></h2>
-      <p>For large plots, agricultural land, and industrial campuses, our ground-mounted solar systems deliver maximum energy output at competitive cost per watt. We handle everything from feasibility studies to energisation.</p>
-      <ul class="benefit-list" style="margin-bottom:22px;">
-        <li><i class="fa-solid fa-check"></i> MW-scale project capability</li>
-        <li><i class="fa-solid fa-check"></i> Optimal tilt angle and row spacing design</li>
-        <li><i class="fa-solid fa-check"></i> Hot-dip galvanised mounting structures</li>
-        <li><i class="fa-solid fa-check"></i> Remote monitoring &amp; SCADA integration</li>
-        <li><i class="fa-solid fa-check"></i> Agricultural solar (agri-voltaic) solutions</li>
-      </ul>
-      <button class="btn-primary" onclick="showPage('contact')"><i class="fa-solid fa-envelope"></i> Get a Quote</button>
-    </div>
+    <img src="WhatsApp Image 2026-07-23 at 2.21.26 PM.jpeg" alt="Solar Installation" />
+    <img src="WhatsApp Image 2026-07-23 at 2.21.27 PM.jpeg" alt="Solar Installation 2" />
+    <img src="WhatsApp Image 2026-07-23 at 2.21.28 PM.jpeg" alt="Solar Installation 3" />
+    <img src="pexels-pixabay-433308.jpg" alt="Solar Panels" />
+    <img src="pic1.PNG" alt="Solar Project" />
+    <img src="pic2.jpeg" alt="Solar Project" />
   </div>
-
-  <!-- EPC Solutions -->
-  <div class="service-section-row" style="margin-bottom:60px;">
-    <img src="solar_2.PNG" alt="EPC Solar Solutions" />
-    <div class="service-section-text">
-      <h2>EPC <span style="color:var(--green);">Solutions</span></h2>
-      <p>Our full-scope Engineering, Procurement &amp; Construction service means you deal with one trusted partner from concept to commissioning. We manage procurement, civil work, electrical installation, testing, and approvals — so you don't have to.</p>
-      <ul class="benefit-list" style="margin-bottom:22px;">
-        <li><i class="fa-solid fa-check"></i> Detailed engineering design &amp; simulations</li>
-        <li><i class="fa-solid fa-check"></i> Tier 1 panel and inverter procurement</li>
-        <li><i class="fa-solid fa-check"></i> Civil, structural &amp; electrical work</li>
-        <li><i class="fa-solid fa-check"></i> Commissioning, testing &amp; handover</li>
-        <li><i class="fa-solid fa-check"></i> Annual Maintenance Contracts (AMC)</li>
-      </ul>
-      <button class="btn-primary" onclick="showPage('contact')"><i class="fa-solid fa-envelope"></i> Get a Quote</button>
-    </div>
+  <div style="text-align:center;">
+    <a href="projects.html" class="btn-primary"><i class="fa-solid fa-images"></i> View All Projects</a>
   </div>
+</section>
 
-  <!-- The Apex Difference -->
-  <div class="apex-diff">
-    <div class="section-center">
-      <h2 class="section-title">The <span>Apex Difference</span></h2>
-      <p class="section-sub">What makes working with us a consistently excellent experience.</p>
-    </div>
-    <div class="diff-grid">
-      <div class="diff-card">
-        <i class="fa-solid fa-medal"></i>
-        <h3>Premium Quality</h3>
-        <p>Only bankable Tier 1 and Tier 2 components with proven field performance and long-term reliability.</p>
-      </div>
-      <div class="diff-card">
-        <i class="fa-solid fa-bolt"></i>
-        <h3>Fast Installation</h3>
-        <p>Streamlined processes and experienced crews ensure on-time project delivery without compromising quality.</p>
-      </div>
-      <div class="diff-card">
-        <i class="fa-solid fa-piggy-bank"></i>
-        <h3>Cost Savings</h3>
-        <p>Maximise ROI with optimised system design, government subsidies, and net metering benefits.</p>
-      </div>
-      <div class="diff-card">
-        <i class="fa-solid fa-life-ring"></i>
-        <h3>Full Lifecycle Support</h3>
-        <p>From warranty claims to annual servicing, our after-sales team is available 365 days a year.</p>
-      </div>
-    </div>
-  </div>
-
-</div><!-- end #page-services -->
-
-<!-- ═══════════════════════════ PROJECTS PAGE ═══════════════════════════ -->
-<div id="page-projects" class="page">
-
-  <div class="page-banner">
-    <h1>Our <span>Projects</span></h1>
-    <p>500+ successful solar installations across Tamil Nadu — every one a story of clean energy delivered.</p>
-  </div>
-
-  <div class="projects-grid">
-    <div class="proj-card">
-      <img src="1.PNG" alt="Residential Rooftop Solar" />
-      <div class="proj-overlay">
-        <h4>Residential Rooftop Solar</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Chennai</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="2.PNG" alt="Commercial Solar Installation" />
-      <div class="proj-overlay">
-        <h4>Commercial Solar Installation</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Trichy</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="3.PNG" alt="Industrial Solar Plant" />
-      <div class="proj-overlay">
-        <h4>Industrial Solar Plant</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Coimbatore</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="4.PNG" alt="Institutional Solar System" />
-      <div class="proj-overlay">
-        <h4>Institutional Solar System</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Madurai</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="5.PNG" alt="Ground Mounted Solar Farm" />
-      <div class="proj-overlay">
-        <h4>Ground Mounted Solar Farm</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Dindigul</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="solar_1.PNG" alt="Rooftop Solar Project" />
-      <div class="proj-overlay">
-        <h4>Rooftop Solar Project</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Salem</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="solar_2.PNG" alt="EPC Solar Solution" />
-      <div class="proj-overlay">
-        <h4>EPC Solar Solution</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Erode</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="solar_3.PNG" alt="Community Solar Project" />
-      <div class="proj-overlay">
-        <h4>Community Solar Project</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Namakkal</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="solar_4.PNG" alt="Multi-Rooftop Installation" />
-      <div class="proj-overlay">
-        <h4>Multi-Rooftop Installation</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Chennai</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="WhatsApp Image 2026-07-23 at 2.21.26 PM.jpeg" alt="Recent Solar Install" />
-      <div class="proj-overlay">
-        <h4>Recent Solar Install</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Trichy</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="WhatsApp Image 2026-07-23 at 2.21.27 PM.jpeg" alt="Solar Wiring &amp; Setup" />
-      <div class="proj-overlay">
-        <h4>Solar Wiring &amp; Setup</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Coimbatore</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="WhatsApp Image 2026-07-23 at 2.21.28 PM.jpeg" alt="Panel Array Installation" />
-      <div class="proj-overlay">
-        <h4>Panel Array Installation</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Madurai</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="_.jpeg" alt="Solar Energy System" />
-      <div class="proj-overlay">
-        <h4>Solar Energy System</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Tamil Nadu</span>
-      </div>
-    </div>
-    <div class="proj-card">
-      <img src="pexels-pixabay-433308.jpg" alt="Large Solar Array" />
-      <div class="proj-overlay">
-        <h4>Large Solar Array</h4>
-        <span class="loc-badge"><i class="fa-solid fa-location-dot"></i> Salem</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Locations -->
-  <div class="proj-locations">
-    <div class="section-center" style="margin-bottom:22px;">
-      <h2 class="section-title">Serving All Across <span>Tamil Nadu</span></h2>
-    </div>
-    <div class="location-chips" style="justify-content:center;">
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Chennai</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Trichy</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Madurai</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Coimbatore</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Dindigul</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Namakkal</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Salem</span>
-      <span class="chip"><i class="fa-solid fa-location-dot"></i> Erode</span>
-    </div>
-  </div>
-
-</div><!-- end #page-projects -->
-
-<!-- ═══════════════════════════ CONTACT PAGE ═══════════════════════════ -->
-<div id="page-contact" class="page">
-
-  <div class="page-banner">
-    <h1>Get <span>In Touch</span></h1>
-    <p>Have a question or ready to go solar? We'd love to hear from you.</p>
-  </div>
-
-  <div class="contact-grid">
-
-    <!-- Contact Info Card -->
-    <div class="contact-info-card">
-      <h3>Contact <span style="color:var(--green);">Information</span></h3>
-
-      <div class="info-row">
-        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="info-text">
-          <div class="lbl">Address</div>
-          <div class="val">No:206, G Floor, Thiruvika Nagar,<br>Porur, Chennai - 600128</div>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-        <div class="info-text">
-          <div class="lbl">Phone</div>
-          <div class="val"><a href="tel:+919840078875" style="color:var(--gray);">+91 98400 78875</a></div>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
-        <div class="info-text">
-          <div class="lbl">WhatsApp</div>
-          <div class="val"><a href="https://wa.me/918148904938" target="_blank" rel="noopener" style="color:var(--gray);">8148904938</a></div>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
-        <div class="info-text">
-          <div class="lbl">Email</div>
-          <div class="val"><a href="mailto:apexsolarsystem@gmail.com" style="color:var(--gray);">apexsolarsystem@gmail.com</a></div>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
-        <div class="info-text">
-          <div class="lbl">Website</div>
-          <div class="val"><a href="https://apexrocks.in/" target="_blank" rel="noopener" style="color:var(--green);">apexrocks.in</a></div>
-        </div>
-      </div>
-
-      <div class="social-icons">
-        <a href="https://wa.me/918148904938" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span class="soc-tooltip"><strong>WhatsApp</strong>8148904938</span>
-        </a>
-        <a href="mailto:apexsolarsystem@gmail.com" class="soc-btn" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-          <span class="soc-tooltip"><strong>Email</strong>apexsolarsystem@gmail.com</span>
-        </a>
-        <a href="tel:+919840078875" class="soc-btn" aria-label="Phone">
-          <i class="fa-solid fa-phone"></i>
-          <span class="soc-tooltip"><strong>Phone</strong>+91 98400 78875</span>
-        </a>
-        <a href="https://www.linkedin.com/in/apex-rock-474b0169/" target="_blank" rel="noopener" class="soc-btn" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-          <span class="soc-tooltip"><strong>LinkedIn</strong>Apex Rock</span>
-        </a>
-        <a href="https://www.instagram.com/apex_solar_systems" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-          <span class="soc-tooltip"><strong>Instagram</strong>@apex_solar_systems</span>
-        </a>
-      </div>
-
-      <!-- Google Maps -->
-      <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.083!2d80.0809!3d12.9716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52576f4c63b9f3%3A0x1234567890abcdef!2sPorur%2C%20Chennai%2C%20Tamil%20Nadu%20600128!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Apex Solar Systems Location - Porur, Chennai">
-        </iframe>
-      </div>
-    </div>
-
-    <!-- Contact Form -->
-    <div class="contact-form-card">
-      <h3>Send Us a <span style="color:var(--green);">Message</span></h3>
-      <form onsubmit="handleForm(event)" novalidate>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name *</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Your first name" required />
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Your last name" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email Address *</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="service">Service Interested In</label>
-          <select id="service" name="service">
-            <option value="">-- Select a Service --</option>
-            <option value="rooftop">Rooftop Solar</option>
-            <option value="ground">Ground Mounted Solar</option>
-            <option value="epc">EPC Solutions</option>
-            <option value="amc">Annual Maintenance Contract</option>
-            <option value="other">Other / General Enquiry</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" placeholder="Tell us about your project or requirements..." required></textarea>
-        </div>
-        <button type="submit" class="btn-green" style="width:100%;justify-content:center;display:flex;align-items:center;gap:8px;">
-          <i class="fa-solid fa-paper-plane"></i> Send Message
-        </button>
-      </form>
-    </div>
-
-  </div>
-
-</div><!-- end #page-contact -->
-
-<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
-
-    <!-- Col 1 -->
     <div class="footer-col">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
         <img src="LOGO.PNG" alt="Apex Solar Logo" style="height:52px;width:auto;" />
@@ -1107,261 +220,80 @@
       </div>
       <p>Tamil Nadu's trusted solar energy partner — delivering high-efficiency PV solutions and complete EPC services for homes, businesses, and industries since over a decade.</p>
       <div class="social-icons">
-        <a href="https://wa.me/918148904938" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span class="soc-tooltip"><strong>WhatsApp</strong>8148904938</span>
-        </a>
-        <a href="mailto:apexsolarsystem@gmail.com" class="soc-btn" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-          <span class="soc-tooltip"><strong>Email</strong>apexsolarsystem@gmail.com</span>
-        </a>
-        <a href="tel:+919840078875" class="soc-btn" aria-label="Phone">
-          <i class="fa-solid fa-phone"></i>
-          <span class="soc-tooltip"><strong>Phone</strong>+91 98400 78875</span>
-        </a>
-        <a href="https://www.linkedin.com/in/apex-rock-474b0169/" target="_blank" rel="noopener" class="soc-btn" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-          <span class="soc-tooltip"><strong>LinkedIn</strong>Apex Rock</span>
-        </a>
-        <a href="https://www.instagram.com/apex_solar_systems" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-          <span class="soc-tooltip"><strong>Instagram</strong>@apex_solar_systems</span>
-        </a>
+        <a href="https://wa.me/918148904938?text=Hello%2C%20Can%20I%20get%20more%20information%20on%20how%20to%20reduce%20my%20EB%20Bill%20100%25%20using%20Solar%20installation%3F" target="_blank" rel="noopener" class="soc-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span class="soc-tooltip"><strong>WhatsApp</strong>8148904938</span></a>
+        <a href="mailto:apexsolarsystem@gmail.com" class="soc-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i><span class="soc-tooltip"><strong>Email</strong>apexsolarsystem@gmail.com</span></a>
+        <a href="tel:+919840078875" class="soc-btn" aria-label="Phone"><i class="fa-solid fa-phone"></i><span class="soc-tooltip"><strong>Phone</strong>+91 98400 78875</span></a>
+        <a href="https://www.linkedin.com/in/apex-rock-474b0169/" target="_blank" rel="noopener" class="soc-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i><span class="soc-tooltip"><strong>LinkedIn</strong>Apex Rock</span></a>
+        <a href="https://www.instagram.com/apex_solar_systems" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i><span class="soc-tooltip"><strong>Instagram</strong>@apex_solar_systems</span></a>
       </div>
     </div>
-
-    <!-- Col 2 -->
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="#" onclick="showPage('home');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Home</a></li>
-        <li><a href="#" onclick="showPage('about');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> About Us</a></li>
-        <li><a href="#" onclick="showPage('services');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Our Services</a></li>
-        <li><a href="#" onclick="showPage('projects');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Projects</a></li>
-        <li><a href="#" onclick="showPage('contact');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Contact</a></li>
+        <li><a href="index.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> About Us</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Our Services</a></li>
+        <li><a href="projects.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Projects</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Contact</a></li>
         <li><a href="https://apexrocks.in/" target="_blank" rel="noopener"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Granite Works</a></li>
       </ul>
       <h4 style="margin-top:22px;">Our Services</h4>
       <ul>
-        <li><a href="#" onclick="showPage('services');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Rooftop Solar</a></li>
-        <li><a href="#" onclick="showPage('services');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Ground Mounted Solar</a></li>
-        <li><a href="#" onclick="showPage('services');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> EPC Solutions</a></li>
-        <li><a href="#" onclick="showPage('services');return false;"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Annual Maintenance</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Rooftop Solar</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Ground Mounted Solar</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> EPC Solutions</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-chevron-right" style="font-size:0.7rem;color:var(--green);"></i> Annual Maintenance</a></li>
       </ul>
     </div>
-
-    <!-- Col 3 -->
     <div class="footer-col">
       <h4>Contact Us</h4>
-      <div class="footer-contact-row">
-        <div class="footer-icon-box"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="txt">No:206, G Floor, Thiruvika Nagar,<br>Porur, Chennai - 600128</div>
-      </div>
-      <div class="footer-contact-row">
-        <div class="footer-icon-box"><i class="fa-solid fa-phone"></i></div>
-        <div class="txt"><a href="tel:+919840078875" style="color:var(--gray);">+91 98400 78875</a></div>
-      </div>
-      <div class="footer-contact-row">
-        <div class="footer-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
-        <div class="txt"><a href="https://wa.me/918148904938" target="_blank" rel="noopener" style="color:var(--gray);">8148904938</a></div>
-      </div>
-      <div class="footer-contact-row">
-        <div class="footer-icon-box"><i class="fa-solid fa-envelope"></i></div>
-        <div class="txt"><a href="mailto:apexsolarsystem@gmail.com" style="color:var(--gray);">apexsolarsystem@gmail.com</a></div>
-      </div>
-      <div class="footer-contact-row">
-        <div class="footer-icon-box"><i class="fa-solid fa-globe"></i></div>
-        <div class="txt"><a href="https://apexrocks.in/" target="_blank" rel="noopener" style="color:var(--green);">apexrocks.in</a></div>
-      </div>
+      <div class="footer-contact-row"><div class="footer-icon-box"><i class="fa-solid fa-location-dot"></i></div><div class="txt">No:206, G Floor, Thiruvika Nagar,<br>Porur, Chennai - 600128</div></div>
+      <div class="footer-contact-row"><div class="footer-icon-box"><i class="fa-solid fa-phone"></i></div><div class="txt"><a href="tel:+919840078875" style="color:var(--gray);">+91 98400 78875</a></div></div>
+      <div class="footer-contact-row"><div class="footer-icon-box"><i class="fa-brands fa-whatsapp"></i></div><div class="txt"><a href="https://wa.me/918148904938?text=Hello%2C%20Can%20I%20get%20more%20information%20on%20how%20to%20reduce%20my%20EB%20Bill%20100%25%20using%20Solar%20installation%3F" target="_blank" rel="noopener" style="color:var(--gray);">8148904938</a></div></div>
+      <div class="footer-contact-row"><div class="footer-icon-box"><i class="fa-solid fa-envelope"></i></div><div class="txt"><a href="mailto:apexsolarsystem@gmail.com" style="color:var(--gray);">apexsolarsystem@gmail.com</a></div></div>
+      <div class="footer-contact-row"><div class="footer-icon-box"><i class="fa-solid fa-globe"></i></div><div class="txt"><a href="https://apexsolarsystems.com" target="_blank" rel="noopener" style="color:var(--green);">apexsolarsystems.com</a></div></div>
     </div>
-
   </div>
-
-  <div class="footer-bottom">
-    &copy; <span id="footerYear"></span> <span>Apex Solar Systems</span>. All rights reserved. &nbsp;|&nbsp; Also trading as <a href="https://apexrocks.in/" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">Apex Rocks &amp; Minerals</a>
-  </div>
+  <div class="footer-bottom">&copy; <span id="footerYear"></span> <span>Apex Solar Systems</span>. All rights reserved. &nbsp;|&nbsp; Also trading as <a href="https://apexrocks.in/" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">Apex Rocks &amp; Minerals</a></div>
 </footer>
 
-<!-- ═══════════════════════════ FLOATING WA BUTTON ═══════════════════════════ -->
-<a href="https://wa.me/918148904938" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/918148904938?text=Hello%2C%20Can%20I%20get%20more%20information%20on%20how%20to%20reduce%20my%20EB%20Bill%20100%25%20using%20Solar%20installation%3F" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-<!-- ═══════════════════════════ JAVASCRIPT ═══════════════════════════ -->
 <script>
-  // ── PAGE NAVIGATION ──
-  function showPage(id) {
-    document.querySelectorAll('.page').forEach(function(p) {
-      p.classList.remove('active');
-    });
-    var target = document.getElementById('page-' + id);
-    if (target) target.classList.add('active');
+  function toggleNav() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('scroll', function() {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-    // Update desktop nav active state
-    document.querySelectorAll('.nav-link').forEach(function(a) {
-      a.classList.toggle('active', a.dataset.page === id);
-    });
-    // Update mobile nav active state
-    document.querySelectorAll('.mob-link').forEach(function(a) {
-      a.classList.toggle('active', a.dataset.page === id);
-    });
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // Re-init slideshow when returning to home
-    if (id === 'home') {
-      initSlideshow();
-    }
-  }
-
-  // ── HAMBURGER TOGGLE ──
-  function toggleNav() {
-    var menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
-  }
-
-  // ── CONTACT FORM HANDLER ──
-  function handleForm(e) {
-    e.preventDefault();
-
-    var firstName  = document.getElementById('firstName').value.trim();
-    var lastName   = document.getElementById('lastName').value.trim();
-    var fullName   = (firstName + ' ' + lastName).trim() || 'Not provided';
-    var email      = document.getElementById('email').value.trim() || 'Not provided';
-    var phone      = document.getElementById('phone').value.trim() || 'Not provided';
-    var message    = document.getElementById('message').value.trim();
-    var serviceEl  = document.getElementById('service');
-    var serviceVal = serviceEl.value ? serviceEl.options[serviceEl.selectedIndex].text : 'Not selected';
-
-    // ── Button loading state ──
-    var btn = e.target.querySelector('button[type="submit"]');
-    var origHTML = btn.innerHTML;
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
-    btn.disabled = true;
-
-    // ── Send via Formspree ──
-    // Replace YOUR_FORM_ID below with the ID from formspree.io (e.g. xpwzgkla)
-    fetch('https://formspree.io/f/xlgqppqz', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        name:    fullName,
-        email:   email,
-        phone:   phone,
-        service: serviceVal,
-        message: message
-      })
-    })
-    .then(function(res) {
-      if (!res.ok) throw new Error('Server error ' + res.status);
-      return res.json();
-    })
-    .then(function() {
-      btn.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message Sent!';
-      btn.style.background = '#1a7a3f';
-
-      // ── WhatsApp notification to owner (9840078875) ──
-      var waText = encodeURIComponent(
-        '🌞 *New Enquiry – Apex Solar Systems*\n\n' +
-        '👤 *Name:* ' + fullName + '\n' +
-        '📞 *Phone:* ' + phone + '\n' +
-        '📧 *Email:* ' + email + '\n' +
-        '⚡ *Service:* ' + serviceVal + '\n\n' +
-        '💬 *Message:*\n' + message
-      );
-      window.open('https://wa.me/918148904938?text=' + waText, '_blank');
-
-      e.target.reset();
-
-      setTimeout(function() {
-        btn.innerHTML = origHTML;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 4000);
-    })
-    .catch(function(err) {
-      console.error('Formspree error:', err);
-      btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Failed – Try Again';
-      btn.style.background = '#c0392b';
-      btn.disabled = false;
-      setTimeout(function() {
-        btn.innerHTML = origHTML;
-        btn.style.background = '';
-      }, 3500);
-      alert('Sorry, there was an issue sending your message. Please call us at +91 98400 78875 or WhatsApp 8148904938.');
-    });
-  }
-
-  // ── SLIDESHOW ──
-  var slideIndex = 0;
-  var slideTimer = null;
-  var slides = [];
-  var dots = [];
-
+  // Slideshow
+  var slideIndex = 0, slideTimer = null, slides = [], dots = [];
   function initSlideshow() {
     slides = document.querySelectorAll('.slideshow-bg .slide');
-    var dotsContainer = document.getElementById('slideDots');
-    if (!dotsContainer) return;
-
-    // Build dots only once
-    if (dotsContainer.children.length === 0) {
-      slides.forEach(function(_, i) {
-        var dot = document.createElement('div');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-        dot.onclick = function() { goToSlide(i); };
-        dotsContainer.appendChild(dot);
-      });
-    }
-    dots = dotsContainer.querySelectorAll('.dot');
-    goToSlide(0);
-    startSlideTimer();
+    var dc = document.getElementById('slideDots');
+    if (!dc) return;
+    slides.forEach(function(_, i) {
+      var d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i+1));
+      d.onclick = function() { goToSlide(i); };
+      dc.appendChild(d);
+    });
+    dots = dc.querySelectorAll('.dot');
+    goToSlide(0); startSlideTimer();
   }
-
   function goToSlide(n) {
     if (!slides.length) return;
     slideIndex = (n + slides.length) % slides.length;
-    slides.forEach(function(s, i) {
-      s.classList.toggle('active', i === slideIndex);
-    });
-    if (dots.length) {
-      dots.forEach(function(d, i) {
-        d.classList.toggle('active', i === slideIndex);
-      });
-    }
+    slides.forEach(function(s,i){ s.classList.toggle('active', i===slideIndex); });
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===slideIndex); });
   }
-
-  function changeSlide(dir) {
-    clearTimeout(slideTimer);
-    goToSlide(slideIndex + dir);
-    startSlideTimer();
-  }
-
+  function changeSlide(dir) { clearTimeout(slideTimer); goToSlide(slideIndex+dir); startSlideTimer(); }
   function startSlideTimer() {
     clearTimeout(slideTimer);
-    slideTimer = setTimeout(function() {
-      goToSlide(slideIndex + 1);
-      startSlideTimer();
-    }, 2000);
+    slideTimer = setTimeout(function(){ goToSlide(slideIndex+1); startSlideTimer(); }, 2000);
   }
-
-  // ── NAVBAR SCROLL ──
-  window.addEventListener('scroll', function() {
-    var nav = document.getElementById('navbar');
-    if (window.scrollY > 40) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-
-  // ── FOOTER YEAR ──
-  document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-  // ── INIT on load ──
-  window.addEventListener('DOMContentLoaded', function() {
-    initSlideshow();
-  });
+  window.addEventListener('DOMContentLoaded', initSlideshow);
 </script>
 </body>
 </html>
