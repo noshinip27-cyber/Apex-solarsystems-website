@@ -406,4 +406,5 @@ footer {
   .stat-item .num { font-size:1.6rem; }
   #navbar { padding:0 18px; }
   .hero-buttons { flex-direction:column; gap:10px; }
+  .hero-badge { display:none; }
 }
