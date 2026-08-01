@@ -86,22 +86,19 @@
 <!-- HERO -->
 <section id="hero">
   <div class="slideshow-bg" id="slideshowBg">
-    <div class="slide active" style="background-image:url('slide1.jpg')"></div>
+    <div class="slide" style="background-image:url('slide1.jpg')"></div>
     <div class="slide" style="background-image:url('slide2.jpg')"></div>
     <div class="slide" style="background-image:url('slide3.jpg')"></div>
     <div class="slide" style="background-image:url('slide4.jpg')"></div>
     <div class="slide" style="background-image:url('slide5.jpg')"></div>
     <div class="slide" style="background-image:url('slide6.jpg')"></div>
-    <div class="slide" style="background-image:url('raze-solar-Q8V1EEvnJgk-unsplash.jpg')"></div>
-    <div class="slide" style="background-image:url('american-public-power-association-XGAZzyLzn18-unsplash.jpg')"></div>
+    <div class="slide active" style="background-image:url('raze-solar-Q8V1EEvnJgk-unsplash.jpg')"></div>
     <div class="slide" style="background-image:url('pexels-ian-panelo-7424248.jpg')"></div>
     <div class="slide" style="background-image:url('pexels-pixabay-433308.jpg')"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="hero-badge"><i class="fa-solid fa-sun"></i> &nbsp;Reduce your EB Bill by 100% using Solar Energy!</span>
-    <h1>Reduce your <span class="eb-glow" style="-webkit-text-fill-color:transparent;font-size:3rem;">EB Bill by 100%</span></h1>
-    <p>Apex Solar Systems delivers high-efficiency PV modules and complete EPC solutions tailored for homes, institutions, and industries across Tamil Nadu.</p>
+    <h1>Reduce your <span class="eb-glow" style="-webkit-text-fill-color:black;font-size:3rem;color:#000000;">EB Bill by 100%</span></h1>
     <div class="hero-catchlines">
       <div class="line"><i class="fa-solid fa-circle-check"></i> We are just an Enquiry away!</div>
       <div class="line"><i class="fa-solid fa-circle-check"></i> Government subsidy available.</div>
@@ -109,8 +106,9 @@
       <div class="line"><i class="fa-solid fa-circle-check"></i> Professional On-Grid and Off-Grid Solar Solutions.</div>
     </div>
     <div class="hero-buttons">
-      <a href="contact.html" class="btn-primary"><i class="fa-solid fa-envelope"></i> Get Free Quote</a>
-      <a href="services.html" class="btn-primary"><i class="fa-solid fa-solar-panel"></i> Our Services</a>
+      <a href="contact.html" class="btn-cta-hero"><i class="fa-solid fa-bolt"></i> Get Free Quote</a>
+      <a href="https://wa.me/918148904938?text=Hello%2C%20Can%20I%20get%20more%20information%20on%20how%20to%20reduce%20my%20EB%20Bill%20100%25%20using%20Solar%20installation%3F" target="_blank" rel="noopener" class="btn-cta-wa"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+      <a href="tel:+919840078875" class="btn-cta-call"><i class="fa-solid fa-phone"></i> Call Us: 98400 78875</a>
     </div>
   </div>
   <div class="slide-arrow prev" onclick="changeSlide(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></div>
@@ -305,7 +303,7 @@
   <div class="footer-bottom">&copy; <span id="footerYear"></span> <span>Apex Solar Systems</span>. All rights reserved. &nbsp;|&nbsp; Also trading as <a href="https://apexrocks.in/" target="_blank" rel="noopener" style="color:var(--green);font-weight:700;">Apex Rocks &amp; Minerals</a></div>
 </footer>
 
-<a href="https://wa.me/918148904938?text=Hello%2C%20Can%20I%20get%20more%20information%20on%20how%20to%20reduce%20my%20EB%20Bill%20100%25%20using%20Solar%20installation%3F" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
 
 <script>
   function toggleNav() { document.getElementById('mobileMenu').classList.toggle('open'); }
@@ -315,20 +313,20 @@
   document.getElementById('footerYear').textContent = new Date().getFullYear();
 
   // Slideshow
-  var slideIndex = 0, slideTimer = null, slides = [], dots = [];
+  var slideIndex = 6, slides = [], dots = [];
   function initSlideshow() {
     slides = document.querySelectorAll('.slideshow-bg .slide');
     var dc = document.getElementById('slideDots');
     if (!dc) return;
     slides.forEach(function(_, i) {
       var d = document.createElement('div');
-      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.className = 'dot' + (i === 6 ? ' active' : '');
       d.setAttribute('aria-label', 'Slide ' + (i+1));
       d.onclick = function() { goToSlide(i); };
       dc.appendChild(d);
     });
     dots = dc.querySelectorAll('.dot');
-    goToSlide(0); startSlideTimer();
+    goToSlide(6);
   }
   function goToSlide(n) {
     if (!slides.length) return;
@@ -336,11 +334,7 @@
     slides.forEach(function(s,i){ s.classList.toggle('active', i===slideIndex); });
     dots.forEach(function(d,i){ d.classList.toggle('active', i===slideIndex); });
   }
-  function changeSlide(dir) { clearTimeout(slideTimer); goToSlide(slideIndex+dir); startSlideTimer(); }
-  function startSlideTimer() {
-    clearTimeout(slideTimer);
-    slideTimer = setTimeout(function(){ goToSlide(slideIndex+1); startSlideTimer(); }, 2000);
-  }
+  function changeSlide(dir) { goToSlide(slideIndex+dir); }
   window.addEventListener('DOMContentLoaded', initSlideshow);
 </script>
 </body>
