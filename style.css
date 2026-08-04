@@ -186,6 +186,39 @@ img { max-width: 100%; display: block; }
 }
 .hero-content h1 { font-size:3rem; font-weight:800; line-height:1.15; margin-bottom:18px; color:var(--black); }
 .hero-content h1 span { color:var(--green); }
+
+/* ── MARKER HIGHLIGHT on h1 ── */
+.h1-highlight {
+  display: inline;
+  font-weight: 900;
+  color: #000;
+  /* translucent frosted white marker stroke */
+  background:
+    linear-gradient(
+      180deg,
+      transparent 8%,
+      rgba(255, 255, 255, 0.38) 8%,
+      rgba(255, 255, 255, 0.38) 90%,
+      transparent 90%
+    );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 6px;
+  border-radius: 3px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-shadow:
+    0 0 8px  rgba(255, 220, 0, 0.95),
+    0 0 18px rgba(255, 180, 0, 0.85),
+    0 0 35px rgba(255, 140, 0, 0.65),
+    0 0 60px rgba(255, 100, 0, 0.4);
+}
+
+/* ── EB BILL GLOW ── */
+.eb-bill-text {
+  font-weight: 900;
+  color: #000;
+}
 .hero-content p { font-size:1.05rem; color:var(--gray); margin-bottom:20px; line-height:1.7; }
 .hero-catchlines { margin-bottom:20px; }
 .hero-catchlines .line {
@@ -194,6 +227,33 @@ img { max-width: 100%; display: block; }
   font-size:1.2rem; color:var(--black); margin-bottom:10px;
 }
 .hero-catchlines .line i { color:var(--green); font-size:1.1rem; }
+
+/* Highlighted catchline — blurred backdrop only on the pill itself */
+.hero-catchlines .line--highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #0a3d1f;
+  padding: 7px 18px 7px 12px;
+  border-radius: 8px;
+  position: relative;
+  isolation: isolate;
+  border: 1.5px solid rgba(45,106,79,0.35);
+  text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+}
+.hero-catchlines .line--highlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: -1;
+}
+.hero-catchlines .line--highlight i { color: var(--green); font-size: 1.1rem; }
 .hero-buttons { display:flex; flex-direction:row; gap:12px; flex-wrap:nowrap; align-items:center; }
 
 /* ── EB BILL GLOW ── */
